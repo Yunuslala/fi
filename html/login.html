@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    
+    <div id="img">
+        <img src="https://account.finishline.com/static/media/fnl-logo.17a8d67e.svg" alt="">
+    </div>
+    <div>
+        <img src="https://account.finishline.com/static/media/STATUS_logo_black.3c28c69a.svg" alt="">
+        <p>ONE ACCOUNT.</p>
+        <p>MORE ACCESS.</p>
+    </div>
+   
+        <h2>CREATE A STATUS ACCOUNT</h2>
+        <div id="create">
+       <p>Earn 10 points for every $1 you spend.</p>
+       <p> Get Points. Gain Access. Boost your STATUS.</p>
+    </div>
+    <div id="form">
+        <form action="">
+            <input type="email" placeholder="Email" id="email">
+            <input type="password" placeholder="Password" id="pass">
+            <input type="text" placeholder="User Login" id="submit">
+        </form>
+    </div>
+    <a href="../html/finish line - Copy - Copy/index.html"></a>
+
+</body>
+</html>
+<script>
+    let submit=document.getElementById("submit");
+    submit.addEventListener("click",(e)=>{
+        e.preventDefault()
+        let email=document.getElementById("email").value;
+        let pass=document.getElementById("pass").value;
+       if(email==""||pass==""){
+        alert("fill all the credentials")
+       }
+       else{
+        let obj={email,pass}
+        signup(obj)
+       }
+    })
+    async function signup(data){
+        try {
+            let res=await fetch("http://localhost:4500/login",{
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify(data)
+            });
+            if(res.ok){
+                let ans=await res.json();
+                
+                if(ans.name=="admin"){
+                    alert("welcome admin You have been login");
+                    window.location="../admin/adminProductPage.html"
+                    localStorage.setItem("token",ans.token);
+                }else{
+                    alert(ans.msg);
+                    localStorage.setItem("usertoken",ans.token);
+                    window.location.href="../html/finish line - Copy - Copy/index.html"
+                }
+            }
+        } catch (error) {
+            
+        }
+    }
+</script>

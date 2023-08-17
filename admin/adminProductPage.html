@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="adminPage.css">
+</head>
+
+<body>
+    <div class="top">DATA HANDALE BY ADMIN</div>
+    <div id="container">
+        <button class="allProducts" id="kids">BOYS PRODUCTS</button>
+        <button class="mensProducts" id="men">MENS PRODUCTS</button>
+        <button class="womensProducts" id="women">WOMENS PRODUCTS</button>
+        <button class="checkoutProducts" id="girls">GIRLS PRODUCTS</button>
+        <button class="allUsers" id="alluser">ALL USERS</button>
+    </div>
+
+
+    <p class="totalProduct"></p>
+
+    <div class="add"></div>
+
+    <div class="appenddiv"></div>
+
+</body>
+<script>
+    let men=document.getElementById("men");
+    men.addEventListener("click",()=>{
+        window.location="men.admin.html"
+    })
+    let Women=document.getElementById("women");
+   Women.addEventListener("click",()=>{
+        window.location="women.admin.html"
+    })
+    let kid=document.getElementById("kids");
+   kid.addEventListener("click",()=>{
+        window.location="women.admin.html"
+    })
+    let girls=document.getElementById("girls");
+    girls.addEventListener("click",()=>{
+        window.location="girls.admin.html"
+    })
+    let user=document.getElementById("alluser");
+    user.addEventListener("click",()=>{
+        window.location="user.html"
+    })
+</script>
