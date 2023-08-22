@@ -85,6 +85,3 @@ function appendProducts(data){
   }
 }
 
-
-
-// fucntionadd()

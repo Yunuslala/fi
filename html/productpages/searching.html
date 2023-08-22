@@ -86,7 +86,7 @@
                 </div>
             </li>
             <li>
-                <span><a href="../html/man.html">MEN</a></span>
+                <span><a href="../../html/man.html">MEN</a></span>
                
                 <div id="max_drop2">
                     <div class="container">
@@ -154,7 +154,7 @@
                 </div>
             </li>
             <li>
-                <span><a href="../html/women.html">WOMEN</a></span>
+                <span><a href="../../html/women.html">WOMEN</a></span>
                 <div id="max_drop3">
                     <div class="container">
                         <div class="logo_png">
@@ -221,7 +221,7 @@
                 </div>
             </li>
             <li>
-                <span><a href="../html/boy.html">BOYS</a></span>
+                <span><a href="../../html/boy.html">BOYS</a></span>
                  
                 <div id="max_drop3">
                     <div class="container">
@@ -291,7 +291,7 @@
                         </div>
             </li>
             <li>
-                <span><a href="../html/girl.html">Girls</a></span>
+                <span><a href="../../html/girl.html">Girls</a></span>
                 <div id="max_drop3">
                     <div class="container"></div>
                     <div class="logo_png">
@@ -646,24 +646,24 @@ function appendProducts(data){
     }).join(" ");
   let div=document.querySelectorAll(".bag_btn");
   for(let btn of div){
-    // let count=0;
-    // btn.addEventListener("click",(e)=>{
-    //     count++;
-    //     if(count<2){
+    let count=0;
+    btn.addEventListener("click",(e)=>{
+        count++;
+        if(count<2){
             let data_id=e.target.dataset;
         addBag(data_id)
         // window.location.href="./cartPage.html"
-        // }else{
-        //     alert("Your Product has been alreday added in bag")
-        // }
+        }else{
+            alert("Your Product has been alreday added in bag")
+        }
        
-    // })
+    })
   }
 }
 
 async function  addBag(data_id){
     try {
-        let  res=await fetch("https://commerce-app-ijwm.onrender.com/add/cart/men",{
+        let  res=await fetch("https://commerce-app-ijwm.onrender.com/add/cart",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json",
